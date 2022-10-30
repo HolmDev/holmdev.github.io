@@ -1,0 +1,10 @@
+{{ define "main" }}
+{{ if ne .Title "About" }}
+<div class="appellation">
+<h1>{{ .Title }}</h1>
+<h3 class="date">Published: {{ .Date.Format "2006-01-02" }}</h3>
+<h3 class="author">By: {{ .Params.author }}</h3>
+</div>
+{{ end }}
+{{ .Content }}
+{{ end }}

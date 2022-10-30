@@ -1,0 +1,21 @@
+baseURL: "https://holmdev.github.io"
+languageCode: "en-us"
+title: "Fredholm"
+theme: "hugo-hyper-gruvbox"
+
+menu:
+  main:
+  - name: "links"
+    url: "/links/"
+  - name: "about"
+    url: "/about/"
+
+permalinks:
+  post: "/articles/:slug"
+
+markup:
+  highlight:
+    guessSyntax: true
+    lineNos: false
+    noClasses: false
+    tabWidth: 4

@@ -1,0 +1,30 @@
+<style>
+#landing    {display: inline-block;}
+.motd       {width: 50%; float: left;}
+.motd p     {font-family: 'Press Start 2P', cursive; font-size: 24px; margin:100px 0px;}
+.ascii-art  {width: 50%; white-space: pre; float: right;}
+.ascii-art p {font-family: monospace; letter-spacing:0.3px; font-size: 
+{{ if .IsNamedParams }} {{ .Get "size" }} {{ else }} {{ .Get 2 }} {{ end }} ;} 
+</style>
+
+{{ if .IsNamedParams }}
+<div id="landing">
+<div class="motd">
+<p>{{ .Get "msg" }}<p>
+</div>
+<div class="ascii-art">
+<p>{{ .Get "art" | readFile }}</p>
+</div>
+</div>
+{{ else }}
+<div id="landing">
+<div class="motd">
+</br></br></br>
+<p>{{ .Get 0 }}<p>
+</br></br></br>
+</div>
+<div class="ascii-art">
+<p>{{ .Get 1 | readFile }}</p>
+</div>
+</div>
+{{ end }}

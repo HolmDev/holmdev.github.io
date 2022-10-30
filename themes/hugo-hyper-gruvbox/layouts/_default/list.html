@@ -1,0 +1,12 @@
+{{ define "main" }}
+{{ .Content }}
+<ul class="all-posts">
+		{{ range where .Site.RegularPages "Section" "post"}}
+		<li class="post">
+			<a href="{{.Permalink}}">
+				[{{ .Params.author | upper }}@{{ .Date.Format "2006-01-02" }}] {{ .Title }}
+			</a>
+		</li>
+		{{ end }}
+</ul>
+{{ end }}
